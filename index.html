@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Images/logoNova.jpg" type="image/x-icon"/>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Classement des Paris</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="titre">Classement des Paris</h1>
+            <div class="logo">
+                <img src="Images/logoNova.jpg" alt="Logo Nova">
+            </div>
+        </header>
+        <form>
+            <input type="file" id="csvFileInput" accept=".csv" />
+            <input type="number" id="targetNumber" placeholder="Entrez un nombre" />
+            <button type="button" onclick="processCSV()">Valider</button>
+        </form>
+        <table id="csvTable" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Jour / Heure</th>
+                    <th>Pseudo</th>
+                    <th>Pari n°1</th>
+                    <th>Pari n°2</th>
+                    <th>Écart</th>
+                </tr>
+            </thead>
+            <tbody id="csvTableBody"></tbody>
+        </table>
+    </div>
+</body>
+</html>
