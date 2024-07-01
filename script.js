@@ -48,6 +48,11 @@ function displayCSVData(csv, targetNumber) {
     data.forEach((rowData, rowIndex) => {
         const tr = document.createElement('tr');
 
+        // Add the position column
+        const tdPosition = document.createElement('td');
+        tdPosition.textContent = `${rowIndex + 1}${getOrdinalSuffix(rowIndex + 1)}`;
+        tr.appendChild(tdPosition);
+
         rowData.forEach((value, index) => {
             const td = document.createElement('td');
             td.textContent = value;
@@ -119,4 +124,9 @@ function formatDate(dateString) {
     const hours = String(date.getHours()).padStart(2, '0');
     const minutes = String(date.getMinutes()).padStart(2, '0');
     return `${day}/${month}/${year} ${hours}:${minutes}`;
+}
+
+function getOrdinalSuffix(number) {
+    if (number === 1) return "er";
+    return "ème";
 }
